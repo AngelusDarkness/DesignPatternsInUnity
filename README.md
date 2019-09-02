@@ -9,9 +9,9 @@ Unity 2019.2
 About
 ====================
 
-This repository will hold several implementations of design patterns that I have use in the past or that I'll like to explore.
+This repository will hold several implementations of design patterns that I have used in the past or that I'd like to explore.
 
-Implementation will try to be really simple to serve as educational for my university students.
+The implementation will try to be really simple to serve as educational for my university students.
 
 Pattern List
 ====================
@@ -20,4 +20,5 @@ Pattern List
     
     Character FSM Sample: 
     
-        The State Machine initialize on Idle State. Use 'Space' bar to switch to Walk State, 'W'  to switch to Run State and 'S' to return to Idle State.
+        The State Machine initialize on Idle State. 
+        Use 'Space' bar to switch to Walk State, 'W' to switch to Run State and 'S' to return to Idle State.
