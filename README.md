@@ -22,3 +22,11 @@ Pattern List
     
         The State Machine initialize on Idle State. 
         Use 'Space' bar to switch to Walk State, 'W' to switch to Run State and 'S' to return to Idle State.
+        
+2) Finite State Machine With Animations: 
+    
+    Character FSM: 
+    
+        Based on Sample 1, it integrate Animation control trought FSM states.
+        The State Machine initialize on Idle State. 
+        Use 'A'  to switch to Color State, 'S' to switch to Scale State and 'D' to return to Idle State.
