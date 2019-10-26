@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace FSM
+{
 public class IdleState : State
 {
     public override void InitState() {
@@ -16,6 +18,6 @@ public class IdleState : State
     public override void ExitState() {
         Debug.Log("Exit State: IdleState");
     }
-
     
+}
 }

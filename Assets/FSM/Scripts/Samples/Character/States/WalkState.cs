@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkState : State
+namespace FSM
 {
-    public override void InitState() {
-        Debug.Log("Init State: Walk  State");
-    }
+    public class WalkState : State
+    {
+        public override void InitState()
+        {
+            Debug.Log("Init State: Walk  State");
+        }
 
-    public override void UpdateState(float delta) {
-                
-        Debug.Log("Update State: WalkState");
-    }
+        public override void UpdateState(float delta)
+        {
 
-    public override void ExitState() {
-        Debug.Log("Exit State: WalkState");
+            Debug.Log("Update State: WalkState");
+        }
+
+        public override void ExitState()
+        {
+            Debug.Log("Exit State: WalkState");
+        }
     }
 }
