@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using FSMWithAnimation;
-using UnityEngine;
-
-namespace FSM
+﻿namespace FSM
 {
     public abstract class State {
         public virtual void InitState() { }

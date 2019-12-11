@@ -1,20 +1,21 @@
 ﻿using FSM;
 using UnityEngine;
 
-namespace FSMWithAnimation
+namespace FSMMovementWithAnimation
 {
     public class IdleState : State
     {
-        private CharacterAnimator _characterAnimator;
+        private CharacterMovement _character;
         
         //Methods
         public override void InitState<T>(T param) {
             Debug.Log("Init State: IdleState");
-            _characterAnimator = param as CharacterAnimator;
-            if (_characterAnimator == null) return;
+            _character = param as CharacterMovement;
             
-            _characterAnimator.ChangeScale(false);
-            _characterAnimator.ChangeColor(false);
+            if(_character == null) return;
+            
+            _character.CanMove = true;
+            _character.IsMoving = false;
         }
 
         public override void UpdateState(float delta) {
