@@ -15,8 +15,7 @@ namespace FSMMovementWithAnimation {
         public override void InitState<T>(T param) {
             Debug.Log("Init State: JumpState");
             _character = param as CharacterMovement;
-            _character.CanMove = true;
-            _character.IsMoving = false;
+       
             CalculateStep(_character.direction);
             CalculateJump();
         }

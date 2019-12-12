@@ -9,9 +9,10 @@ namespace FSMMovementWithAnimation
 
         [SerializeField] private CharacterMovement _characterMovement;
         
-        private readonly MoveState _moveState = new MoveState();
         private readonly IdleState _idleState = new IdleState();
+        private readonly MoveState _moveState = new MoveState();
         private readonly JumpState _jumpState = new JumpState();
+        
         private void Start() {
             SwitchState(_idleState, _characterMovement);
         }
@@ -30,7 +31,9 @@ namespace FSMMovementWithAnimation
                 if (!IsStateRunning(typeof(MoveState))) {
                     _characterMovement.direction = Directions.kNone;
                 }
-
+                
+                _characterMovement.CanMove = true;
+                _characterMovement.IsMoving = false;
                 SwitchState(_jumpState, _characterMovement);
             } else if (Input.GetKey(KeyCode.A)) {
                 if (!_characterMovement.CanMove) {
