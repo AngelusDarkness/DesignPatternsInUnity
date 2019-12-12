@@ -30,3 +30,21 @@ Pattern List
         Based on Sample 1, it integrate Animation control trought FSM states.
         The State Machine initialize on Idle State. 
         Use 'A'  to switch to Color State, 'S' to switch to Scale State and 'D' to return to Idle State.
+
+3) Finite State Machine With Movement and Animations: 
+    
+    Character FSM: 
+    
+        Based on Sample 2, it integrate Class structure to handle movement with FSM states in a decoupled way.
+        The State Machine initialize on Idle State. 
+        Use 'WASD'  to switch to Move State in different directions, 'SpaceBar' to switch to Jump State.
+        
+        
+4) Adapter:
+    
+    Audio Adapter: 
+    
+        It propose a base interface (AudioClipAdapter SO) that can integrate different audio engines/implementations 
+        while it offers an API to the other systems of the game's architecture.
+      
+        
