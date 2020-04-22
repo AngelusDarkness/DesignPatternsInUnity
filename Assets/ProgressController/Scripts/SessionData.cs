@@ -10,12 +10,18 @@ public class SessionData {
 
         var data = PlayerPrefs.GetString("data", "");
         if (data != "") {
-	        DESEncryption.TryDecrypt(data, out var original);
-            GAME_DATA = JsonUtility.FromJson<GameData>(original);
-			GAME_DATA.LoadData();
-            valid = true;
+	        var success = DESEncryption.TryDecrypt(data, out var original);
+	        if (success) {
+		        GAME_DATA = JsonUtility.FromJson<GameData>(original);
+		        GAME_DATA.LoadData();
+		        valid = true;    
+	        }
+	        else {
+		        GAME_DATA = new GameData();
+	        }
+            
         } else {
-            SessionData.GAME_DATA = new GameData();
+            GAME_DATA = new GameData();
         }
 
         return valid;
@@ -29,8 +35,8 @@ public class SessionData {
             var result = DESEncryption.Encrypt(JsonUtility.ToJson(SessionData.GAME_DATA));
             PlayerPrefs.SetString("data", result);
             PlayerPrefs.Save();
-        } catch (Exception e) {
-            Debug.LogError(e.ToString());
+        } catch (Exception ex) {
+            Debug.LogError(ex.ToString());
         }
 
         return valid;
@@ -47,14 +53,17 @@ public class SessionData {
 }
 
 
-[System.Serializable]
+[Serializable]
 public class GameData {
 	//Put attributes that you want to save during your game.
-    
+	public int currentCharacterLevel = 0;
+	public int[] abilitiesLevel = { 0, 0 , 0 };
 
 	public GameData() {
-    		
-    }
+		currentCharacterLevel = -1;
+		abilitiesLevel[0] = -1;
+		abilitiesLevel[1] = -1;
+	}
 
 	public void SaveData() {
     
