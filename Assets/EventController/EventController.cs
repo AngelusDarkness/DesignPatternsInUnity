@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Events {
 
-	public class EventController : MonoBehaviour {
+	public class EventController : MonoBehaviour 
+	{
 
 		//Private Members
 		private static bool _applicationIsQuitting = false;
@@ -18,19 +19,17 @@ namespace Events {
 		//Public Members
 		public delegate void EventDelegate<T>(T eventData) where T : GameEvent;
 
-		public static EventController Instance {
-			set { _instance = value; }
-
+		private static EventController Instance {
 			get {
-
-				if (_instance == null) {
-					_instance = GameObject.FindObjectOfType<EventController>() as EventController;
-					if (_instance == null) {
-						_instance = new GameObject().AddComponent<EventController>();
-						_instance.name = "EventManager";
-						DontDestroyOnLoad(_instance);
-					}
-				}
+				if (_instance != null) return _instance;
+				
+				_instance = FindObjectOfType<EventController>();
+				
+				if (_instance != null) return _instance;
+				
+				_instance = new GameObject().AddComponent<EventController>();
+				_instance.name = "EventController";
+				DontDestroyOnLoad(_instance);
 
 				return _instance;
 			}
