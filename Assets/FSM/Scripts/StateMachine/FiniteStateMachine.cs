@@ -40,10 +40,8 @@ namespace FSM
         // Update is called once per frame
         protected virtual void Update()
         {
-            if (_currentState == null) {
-                return;
-            }
-            _updateState(Time.deltaTime);
+            _currentState?.UpdateState(Time.deltaTime);
+            //_updateState(Time.deltaTime);
         }
 
         protected bool IsStateRunning(Type state) {

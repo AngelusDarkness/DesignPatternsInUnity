@@ -6,7 +6,6 @@ namespace FSMMovementWithAnimation {
     public class CharacterMovement : MonoBehaviour {
         
         
-        
         [SerializeField] private Animator _animator;
         
         [SerializeField] private float _speed = 1;
