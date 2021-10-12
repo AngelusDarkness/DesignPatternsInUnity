@@ -12,8 +12,10 @@ public class DESEncryption {
 	private const int Iterations = 1000;
 
 	public static string Encrypt(string plainText) {
-		if (plainText == null)
+		if (string.IsNullOrEmpty(plainText)) {
 			throw new ArgumentNullException("plainText");
+		}
+			
 
 		if (string.IsNullOrEmpty(DESEncryption.password))
 			throw new ArgumentNullException("password");
